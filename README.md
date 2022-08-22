@@ -1,4 +1,40 @@
-# Getting Started with Create React App
+# Project Name Lab Class 06 Asynchronous code, and APIs
+
+**Author**: Jeffrey Smith
+**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+
+## Overview
+<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+## Getting Started
+<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+Open [web request-response cycle](https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fassets.v7-io.invisionapp.com%2Fassets%2FA_MGFjZjlkZDY2YjhlM2JmOSibvdD-_jjstA3A_IpYskGge-XlfkAxNpS41it356YfGvFUODIm8eUxfviUMZ1OD-Y-JvlBga87FvvO0qwdeusQytlkh5bLiPVcKheB_4C7)
+
+## Architecture
+<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+## Change Log
+<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
+
+01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+
+## Credit and Collaborations
+<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+Time Estimates
+For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
+
+Name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
