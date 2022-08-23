@@ -14,10 +14,15 @@ class Main extends React.Component {
       this.state = {
         city: '',
         cityData: [],
-        // dataCity: [],
+        mapUrl: '',
+        // error: false;
      
    
   }
+}
+
+setMapUrl = () => {
+  this.setState( {mapUrl: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=12`}); 
 }
 
 
@@ -30,6 +35,7 @@ class Main extends React.Component {
     console.log(this.state.city);
   }
 
+  
 
   handleCitySubmit = async (e) => {
     e.preventDefault();

@@ -5,6 +5,7 @@
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+This application allows a user to search a city. A display shows the user a map along with links to data about the city weather and movies.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -14,25 +15,66 @@ Open [web request-response cycle](https://slack-imgs.com/?c=1&o1=ro&url=https%3A
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
+* React
+* Bootstrap React and Bootstrap
+
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+
+08-22-2022 4:00pm - Application calls LocationIQ API and uses the data received to display the city, county, country, and coordinates of the city. A map is also displayed.
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 Time Estimates
 For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
 
-Name of feature: ________________________________
+Name of feature: Form
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hr
 
-Start time: _____
+Start time: 2:00 pm
 
-Finish time: _____
+Finish time: 3:30 pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 1/2 hr
+
+---
+Name of feature: City Display
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 3:30 pm
+
+Finish time: 5:00pm
+
+Actual time needed to complete: 1 1/2 hr
+
+---
+
+Name of feature: Map
+
+Estimate of time needed to complete: 1 hr
+
+Start time:5:00 pm
+
+Finish time:
+
+Actual time needed to complete:  hr
+
+---
+
+Name of feature: Error Alert
+
+Estimate of time needed to complete: 1 hr
+
+Start time:5:00 pm
+
+Finish time:
+
+Actual time needed to complete:  hr
+
 
 ## Getting Started with Create React App
 
