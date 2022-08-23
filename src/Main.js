@@ -9,33 +9,30 @@ import axios from 'axios';
 class Main extends React.Component {
 
   constructor(props) {
-    super(props); 
-   
-      this.state = {
-        city: '',
-        cityData: [],
-        mapUrl: '',
-        // error: false;
-     
-   
-  }
-}
+    super(props);
 
-setMapUrl = () => {
-  this.setState( {mapUrl: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=12`}); 
-}
+    this.state = {
+      city: '',
+      cityData: [],
+      map: '',
+      // error: false;
+
+
+    }
+  }
+
 
 
   handleCityInput = (e) => {
     let city = e.target.value;
     console.log(city);
-    this.setState ({
+    this.setState({
       city: city,
     })
     console.log(this.state.city);
   }
 
-  
+
 
   handleCitySubmit = async (e) => {
     e.preventDefault();
@@ -45,37 +42,39 @@ setMapUrl = () => {
     console.log(response.data);
     this.setState({
       cityData: response.data,
-      
+
+      map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=12`
     })
     console.log(this.state.cityData);
+    console.log(this.state.map);
   }
   render() {
     let cityChar = this.state.cityData.map((char, idx) => {
       return <li key={idx}>
         <Card style={{ width: '18rem' }}>
           <Card.Body>
-        <Card.Text>{char.lat}</Card.Text>
-        <Card.Text>{char.lon}</Card.Text>
-        <Card.Text>{char.display_name}</Card.Text>
-        </Card.Body>
+            <Card.Img src={this.state.map} />
+            <Card.Text>Latitude: {char.lat}</Card.Text>
+            <Card.Text>Longitude: {char.lon}</Card.Text>
+            <Card.Text>Location: {char.display_name}</Card.Text>
+          </Card.Body>
         </Card>
-        </li>
-   
+      </li>
+
     });
-   
+
     return (
       <>
         <main>
           <Form onSubmit={this.handleCitySubmit}>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Pick City</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1"
-                onInput={this.handleCityInput}
-
-
-              />
-            </div>
-
+            <Form.Group className="mb-3">
+            <Form.Label>Enter City Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="City"
+              onInput={this.handleCityInput}
+              ></Form.Control>
+            </Form.Group>
             <Button variant="primary" type="submit">
               Explore!
             </Button>
