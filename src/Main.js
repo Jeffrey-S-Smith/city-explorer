@@ -37,13 +37,13 @@ class Main extends React.Component {
   handleCitySubmit = async (e) => {
     e.preventDefault();
     // request city data from API
-    let response = await axios.get(`https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`);
+    let response = await axios.get(`https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_KEY}&q=${this.state.city}&format=json`);
     //save that data in state
     console.log(response.data);
     this.setState({
       cityData: response.data,
 
-      map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=12`
+      map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=12`
     })
     console.log(this.state.cityData);
     console.log(this.state.map);
@@ -53,7 +53,7 @@ class Main extends React.Component {
       return <li key={idx}>
         <Card style={{ width: '18rem' }}>
           <Card.Body>
-            <Card.Img src={this.state.map} />
+            <Card.Img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${char.lat},${char.lon}&zoom=12`} />
             <Card.Text>Latitude: {char.lat}</Card.Text>
             <Card.Text>Longitude: {char.lon}</Card.Text>
             <Card.Text>Location: {char.display_name}</Card.Text>
