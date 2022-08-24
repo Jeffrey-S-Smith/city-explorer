@@ -1,7 +1,7 @@
-# Project Name Lab Class 06 Asynchronous code, and APIs
+# Project Name Lab Class 07 Servers with Node and Express
 
 **Author**: Jeffrey Smith
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 2.1.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -9,6 +9,7 @@ This application allows a user to search a city. A display shows the user a map 
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+src/image
 
 Open [web request-response cycle](https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fassets.v7-io.invisionapp.com%2Fassets%2FA_MGFjZjlkZDY2YjhlM2JmOSibvdD-_jjstA3A_IpYskGge-XlfkAxNpS41it356YfGvFUODIm8eUxfviUMZ1OD-Y-JvlBga87FvvO0qwdeusQytlkh5bLiPVcKheB_4C7)
 
@@ -29,6 +30,30 @@ Open [web request-response cycle](https://slack-imgs.com/?c=1&o1=ro&url=https%3A
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 Time Estimates
 For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
+
+Name of feature: Errors: As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner.
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 9:00  am
+
+Finish time: 10:00 am
+
+Actual time needed to complete: 1 hour
+
+---
+
+Name of feature: Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore.
+
+Estimate of time needed to complete: 2 hr
+
+Start time: 4:00 pm
+
+Finish time: 9:00 am
+
+Actual time needed to complete: I don't know
+
+---
 
 Name of feature: Form
 
@@ -74,7 +99,6 @@ Start time:5:00 pm
 Finish time:
 
 Actual time needed to complete:  hr
-
 
 ## Getting Started with Create React App
 
