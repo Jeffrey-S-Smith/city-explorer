@@ -15,9 +15,9 @@ class Main extends React.Component {
       city: '',
       cityData: [],
       map: '',
-      // error: false;
-
-
+      error: false,
+      errorMessage: '',
+      display: false,
     }
   }
 
@@ -37,16 +37,24 @@ class Main extends React.Component {
   handleCitySubmit = async (e) => {
     e.preventDefault();
     // request city data from API
+    try {
     let response = await axios.get(`https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_KEY}&q=${this.state.city}&format=json`);
     //save that data in state
     console.log(response.data);
     this.setState({
       cityData: response.data,
-
-      map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=12`
+      error: false,
+      display: true
+      
     })
     console.log(this.state.cityData);
-    console.log(this.state.map);
+  } catch (error) {
+    this.setState({
+      error: true,
+      errorMessage: `An Error Occurred: ${error.response.status}`,
+    });
+    console.log(error.message);
+  }
   }
   render() {
     let cityChar = this.state.cityData.map((char, idx) => {
@@ -82,6 +90,13 @@ class Main extends React.Component {
           <ul>
             {cityChar}
           </ul>
+          
+          this.state.error
+            ?
+            <p>{this.state.errorMessage}</p>
+            :
+            this.state.display
+            ?
         </main>
       </>
     );
