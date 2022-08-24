@@ -11,7 +11,7 @@ This application allows a user to search a city. A display shows the user a map 
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 src/image
 
-Open [web request-response cycle](https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fassets.v7-io.invisionapp.com%2Fassets%2FA_MGFjZjlkZDY2YjhlM2JmOSibvdD-_jjstA3A_IpYskGge-XlfkAxNpS41it356YfGvFUODIm8eUxfviUMZ1OD-Y-JvlBga87FvvO0qwdeusQytlkh5bLiPVcKheB_4C7)
+Open ![image info](./public/Lab6.jpg)
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
