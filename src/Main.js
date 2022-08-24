@@ -38,13 +38,14 @@ class Main extends React.Component {
     e.preventDefault();
     // request city data from API
     try {
-    let response = await axios.get(`https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_KEY}&q=${this.state.city}&format=json`);
+    let response = await axios.get(`https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`);
     //save that data in state
     console.log(response.data);
     this.setState({
       cityData: response.data,
       error: false,
       display: true
+    
       
     })
     console.log(this.state.cityData);
@@ -61,7 +62,7 @@ class Main extends React.Component {
       return <li key={idx}>
         <Card style={{ width: '18rem' }}>
           <Card.Body>
-            <Card.Img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${char.lat},${char.lon}&zoom=12`} />
+            <Card.Img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${char.lat},${char.lon}&zoom=12`} />
             <Card.Text>Latitude: {char.lat}</Card.Text>
             <Card.Text>Longitude: {char.lon}</Card.Text>
             <Card.Text>Location: {char.display_name}</Card.Text>
