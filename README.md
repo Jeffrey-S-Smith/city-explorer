@@ -9,7 +9,8 @@ This application allows a user to search a city. A display shows the user a map 
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-src/image
+
+src/image of Life Cycle
 
 Open ![image info](./img/Lab6.jpg)
 Open ![image info](./img/lab7.png)
