@@ -11,9 +11,10 @@ This application allows a user to search a city. A display shows the user a map 
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 src/image
 
-Open ![image info](/src/img/lab_6.jpg)
-Open ![image info](/src/img/lab_7.png)
-Open ![image info](/src/img/lab_8.jpg)
+![image info](/src/img/lab_6.jpg)
+![image info](/src/img/lab_7.png)
+![image info](/src/img/lab_8.jpg)
+![image info](/src/img/lab_9.jpg)
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
