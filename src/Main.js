@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.css';
 import Weather from './Weather.js';
+import Movie from './Movie.js';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
@@ -18,8 +19,8 @@ class Main extends React.Component {
       map: '',
       error: false,
       errorMessage: '',
-      display: false,
       weatherData: [],
+      movieData: [],
     }
   }
 
@@ -44,8 +45,8 @@ class Main extends React.Component {
 
       let mapArr = [];
       mapArr.push(response.data[0])
-
-      let weatherData = await this.getWeatherData(this.state.city);
+////////
+      let weatherData = await this.getWeatherData(response.data[0]);
       
       if (!weatherData ){
         weatherData = [];
@@ -55,11 +56,23 @@ class Main extends React.Component {
       this.setState({
         cityData: mapArr,
         error: false,
-        display: true,
         weatherData: weatherData,
 
       })
-      console.log(this.state.weatherData);
+
+      let movieData = await this.getMovieData(response.data[0]);
+      
+      if (!movieData ){
+        movieData = [];
+      }
+      //save that data in state
+      console.log(response.data);
+      this.setState({
+        error: false,
+        movieData: movieData,
+
+      })
+      
     } catch (error) {
       this.setState({
         error: true,
@@ -69,16 +82,32 @@ class Main extends React.Component {
      }
   }
 
-  getWeatherData = async (city_name) => {
+  getWeatherData = async (cityInfo) => {
+   
     try {
-      let response = await axios.get(`http://localhost:3001/weather?city_name=${city_name}`);
-      //
+      let response = await axios.get(`http://localhost:3001/weather?lat=${cityInfo.lat}&lon=${cityInfo.lon}`);
+      console.log(response.data);
       return response.data
-      // console.log(response.data);
+     
+      
+    } catch (err) {
+      console.log(err);    
+    }
+  }
+
+  getMovieData = async (cityInfo) => {
+   
+    try {
+      let response = await axios.get(`http://localhost:3001/movie?searchQuery=${cityInfo}`);
+      console.log(response.data);
+      return response.data
+     
+      
     } catch (err) {
       console.log(err);
     }
   }
+
   render() {
     let cityChar = this.state.cityData.map((char, idx) => {
       return <li key={idx}>
@@ -119,15 +148,10 @@ class Main extends React.Component {
 
             <Weather
               weatherData={this.state.weatherData} />
+              <Movie
+              movieData={this.state.movieData} />
 
-            this.state.error
-            ?
-            <p>{this.state.errorMessage}</p>
-            :
-            this.state.display
-            ?
-            <p>{this.state.errorMessage}</p>
-          </main>
+            </main>
         </>
       );
     }
