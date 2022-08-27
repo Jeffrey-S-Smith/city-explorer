@@ -36,7 +36,6 @@ class Main extends React.Component {
   }
 
 
-
   handleCitySubmit = async (e) => {
     e.preventDefault();
     // request city data from API
@@ -60,7 +59,7 @@ class Main extends React.Component {
 
       })
 
-      let movieData = await this.getMovieData(response.data[0]);
+      let movieData = await this.getMovieData(this.state.city);
       
       if (!movieData ){
         movieData = [];
@@ -98,7 +97,7 @@ class Main extends React.Component {
   getMovieData = async (cityInfo) => {
    
     try {
-      let response = await axios.get(`http://localhost:3001/movie?searchQuery=${cityInfo}`);
+      let response = await axios.get(`http://localhost:3001/movie?city=${cityInfo}`);
       console.log(response.data);
       return response.data
      
