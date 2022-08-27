@@ -84,7 +84,7 @@ class Main extends React.Component {
   getWeatherData = async (cityInfo) => {
    
     try {
-      let response = await axios.get(`http://localhost:3001/weather?lat=${cityInfo.lat}&lon=${cityInfo.lon}`);
+      let response = await axios.get(`${process.env.REACT_APP_SERVER}/weather?lat=${cityInfo.lat}&lon=${cityInfo.lon}`);
       console.log(response.data);
       return response.data
      
@@ -97,7 +97,7 @@ class Main extends React.Component {
   getMovieData = async (cityInfo) => {
    
     try {
-      let response = await axios.get(`http://localhost:3001/movie?city=${cityInfo}`);
+      let response = await axios.get(`${process.env.REACT_APP_SERVER}/movie?city=${cityInfo}`);
       console.log(response.data);
       return response.data
      
